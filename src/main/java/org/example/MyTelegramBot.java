@@ -107,7 +107,7 @@ public class MyTelegramBot extends TelegramLongPollingBot {
                 Document doc = Jsoup.connect(Url).get();
                 Elements rateElements = doc.select(".price_info .price");
                 double rate = Double.parseDouble(rateElements.text());
-                System.out.println("rate = " + rate);
+
                 for(int i = 0; i < targetRateList.size(); i++){
                     if (rate >= targetRateList.get(i)) {
                         // 환율이 목표 금액에 도달했을 때 텔레그램 메시지를 보냅니다.
